@@ -29,7 +29,7 @@ int msleep(long msec)
 int main() {
 
 	printf("Debut de l'allocation\n");
-	int ngiga = 4;
+	long long int ngiga = 4;
 	long long int nelem = ngiga*1000000000;
 	char *array = malloc(nelem);
 	if (array == NULL) {
