@@ -34,25 +34,22 @@ int main(int argc, char **argv) {
 	unsigned long long int fact=1000;
 	unsigned long long int val=1000;
 
-	while ((c = getopt (argc, argv, "mgMG")) != -1)
+	while ((c = getopt (argc, argv, "m:g:M:G:")) != -1)
 		switch (c)
 		{
 			case 'm':
 			case 'M':
-				printf("mega");
-				fact = 1;
+				fact = 1000000;
+				val = (unsigned long long int)atoi(optarg);
 				break;
 			case 'g':
 			case 'G':
-				printf("giga");
-				fact=1000;
+				fact = 1000000000;
+				val = (unsigned long long int)atoi(optarg);
 				break;
 			default:
 				abort ();
 		}
-	for (index = optind; index < argc; index++)
-		val = (unsigned long long int)argv[index];
-		printf ("Valeur lue :%llu\n", val);
 
 	unsigned long long int nelem = fact*val;
 	printf("Taille de l'allocation en octets :%llu\n",nelem);
